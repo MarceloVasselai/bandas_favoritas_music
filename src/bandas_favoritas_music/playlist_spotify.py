@@ -14,23 +14,23 @@ def criar_playlist_top_musics(artist_names):
     playlist = sp.user_playlist_create(user_id, "Top Tracks Playlist", public=False)
     playlist_id = playlist['id']
     
-    track_ids = []
+    music_ids = []
     
     for artist in artist_names:
         results = sp.search(q='artist:' + artist, type='artist')
         if results['artists']['items']:
-            artist_id = results['artists']['items'][0]['id']
-            top_tracks = sp.artist_top_tracks(artist_id)
+            artistas_id = results['artists']['items'][0]['id']
+            top_music = sp.artist_top_tracks(artistas_id)
             
             # Adiciona as três músicas mais tocadas
-            for track in top_tracks['tracks'][:3]:
-                track_ids.append(track['id'])
+            for music in top_music['tracks'][:3]:
+                music_ids.append(music['id'])
         else:
             print(f"Artista não encontrado: {artist}")
     
     # Adiciona as músicas à playlist
-    if track_ids:
-        sp.playlist_add_items(playlist_id, track_ids)
+    if music_ids:
+        sp.playlist_add_items(playlist_id, music_ids)
         print(f"Músicas adicionadas à playlist '{playlist['name']}' com sucesso!")
     else:
         print("Nenhuma música encontrada para adicionar à playlist.")
