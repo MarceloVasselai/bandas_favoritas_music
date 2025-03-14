@@ -18,7 +18,7 @@ if __name__ == '__main__':
     video_urls = [
         'https://www.youtube.com/watch?v=x34icYC8zA0',
         # 'https://www.youtube.com/watch?v=VIDEO_ID_2',
-        # Adicione mais URLs conforme necessário
+        # Adicione mais URLs conforme necessário.
     ]
 
     for url in video_urls:
