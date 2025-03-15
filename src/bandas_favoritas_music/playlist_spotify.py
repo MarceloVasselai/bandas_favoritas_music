@@ -9,7 +9,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                scope='playlist-modify-private'))
 
 def criar_playlist_top_musics(artist_names):
-    # Cria uma nova playlist
+    # Cria uma nova playlist_
     user_id = sp.current_user()['id']
     playlist = sp.user_playlist_create(user_id, "Top Tracks Playlist", public=False)
     playlist_id = playlist['id']

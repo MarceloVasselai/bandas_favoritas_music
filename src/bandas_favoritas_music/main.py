@@ -9,7 +9,7 @@ def get_top_tracks(artist_name):
                                                    redirect_uri=SPOTIPY_REDIRECT_URI,
                                                    scope="user-library-read"))
 
-    # Busca o artista
+    # Busca o artista_
     results = sp.search(q='artist:' + artist_name, type='artist')
     items = results['artists']['items']
     
