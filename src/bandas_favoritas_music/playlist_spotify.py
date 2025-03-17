@@ -28,7 +28,7 @@ def criar_playlist_top_musics(artist_names):
         else:
             print(f"Artista não encontrado: {artist}")
     
-    # Adiciona as músicas à playlist
+    # Adiciona as músicas à playlist..
     if music_ids:
         sp.playlist_add_items(playlist_id, music_ids)
         print(f"Músicas adicionadas à playlist '{playlist['name']}' com sucesso!")
