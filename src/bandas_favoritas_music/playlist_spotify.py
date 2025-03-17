@@ -22,7 +22,7 @@ def criar_playlist_top_musics(artist_names):
             artistas_id = results['artists']['items'][0]['id']
             top_music = sp.artist_top_tracks(artistas_id)
             
-            # Adiciona as três músicas mais tocadas
+            # Adiciona as três músicas mais tocadas;
             for music in top_music['tracks'][:3]:
                 music_ids.append(music['id'])
         else:
